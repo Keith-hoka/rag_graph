@@ -11,7 +11,7 @@ rather than intuition*.
 > 257 chunks) on purpose — the value is in a rigorously evaluated, honestly-reported
 > retrieval pipeline, not in infrastructure size.
 
-**Live demo:** `<your-streamlit-cloud-url>`
+**Live demo:** `https://raggraph-keithho.streamlit.app/`
 *(First load after idle may be slow — the free tier spins down, and the Neo4j Aura
 free instance auto-pauses after ~3 days. The app degrades gracefully to 2-way
 retrieval if the graph database is unavailable.)*
