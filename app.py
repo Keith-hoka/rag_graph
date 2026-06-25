@@ -1,17 +1,27 @@
-import tempfile
-from pathlib import Path
-
+import os
 import streamlit as st
+
+try:
+    for _k, _v in st.secrets.items():
+        os.environ.setdefault(_k, str(_v))
+except Exception:
+    pass
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
+st.set_page_config(page_title="Graph-RAG", page_icon="🔎", layout="centered")
+
+import tempfile
+from pathlib import Path
+
 from langchain_community.document_loaders import PyPDFLoader
 
-from adaptive_rag import build_adaptive_graph
-from ingestion import chunk_documents
-from rag_chain import format_docs, make_chain
-from retriever import build_inmemory_retriever
+from rag.adaptive_rag import build_adaptive_graph
+from rag.ingestion import chunk_documents
+from rag.rag_chain import format_docs, make_chain
+from rag.retriever import build_inmemory_retriever
 
 st.set_page_config(page_title="Graph-RAG", page_icon="🔎", layout="centered")
 
